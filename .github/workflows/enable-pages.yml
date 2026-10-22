@@ -14,23 +14,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Configure Pages site
+      - name: Check Pages build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set +e
           {
-            echo "GET"
+            echo "PAGES"
             gh api "repos/${GITHUB_REPOSITORY}/pages"
-            echo "UPDATE"
-            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
-            echo "GET after"
-            gh api "repos/${GITHUB_REPOSITORY}/pages"
-            echo "LATEST BUILD"
+            echo "BUILD"
             gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest"
-          } > pages-setup-status.txt 2>&1
+            echo "REQUEST"
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
+            echo "LIVE STATUS"
+            curl -Ls -o .github/homepage.html -w '%{http_code}\n' "https://spadardtubmanhc385-oss.github.io/LJT-Homepage/"
+            echo "SECTIONS"
+            grep -n -E 'About Me|Academic Background|Research Experience|Skills|Publications|SynLogic|Contact|jliugi' .github/homepage.html
+          } > .github/pages-setup-status.txt 2>&1
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add pages-setup-status.txt
-          git commit -m "Record GitHub Pages setup status"
+          git add .github/pages-setup-status.txt .github/homepage.html
+          git commit -m "Record Pages build and homepage preview"
           git push origin HEAD:master
