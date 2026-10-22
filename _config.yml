@@ -13,8 +13,8 @@ title                    : "Junteng Liu"
 title_separator          : "-"
 name                     : &name "Junteng Liu"
 description              : &description "Junteng Liu's academic portfolio"
-url                      : https://spadardtubmanhc385-oss.github.io
-baseurl                  : "/LJT-Homepage"
+url                      : https://spadardtubmanhc385-oss.github.io/LJT-Homepage
+baseurl                  : ""
 repository               : "spadardtubmanhc385-oss/LJT-Homepage"
 
 # Site Author

@@ -2,9 +2,6 @@
 permalink: /
 title: "Junteng Liu"
 author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
 ---
 
 ## About Me
@@ -13,7 +10,7 @@ I am a first-year PhD candidate at the HKUST NLP Group, supervised by Professor 
 
 ## Academic Background
 
-- **Ph.D. in Computer Science** — Hong Kong University of Science and Technology (HKUST), 2024–Present. I am a PhD candidate at the HKUST NLP Group, supervised by Professor Junxian He.
+- **Ph.D. in Computer Science** — Hong Kong University of Science and Technology (HKUST), 2024–Present. PhD supervisor: Professor Junxian He.
 - **B.Eng.** — Shanghai Jiao Tong University (SJTU), 2020–2024. I graduated in June 2024. Professor Junxian He previously advised me during my undergraduate studies at SJTU.
 
 ## Research Interests
