@@ -22,12 +22,12 @@ jobs:
           {
             echo "GET"
             gh api "repos/${GITHUB_REPOSITORY}/pages"
-            echo "PATCH"
-            gh api --method PATCH "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
-            echo "POST"
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
+            echo "UPDATE"
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
             echo "GET after"
             gh api "repos/${GITHUB_REPOSITORY}/pages"
+            echo "LATEST BUILD"
+            gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest"
           } > pages-setup-status.txt 2>&1
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
