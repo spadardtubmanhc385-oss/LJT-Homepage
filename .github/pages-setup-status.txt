@@ -1,23 +1,53 @@
 PAGES
-{"url":"https://api.github.com/repos/spadardtubmanhc385-oss/LJT-Homepage/pages","status":"built","cname":null,"custom_404":false,"html_url":"https://spadardtubmanhc385-oss.github.io/LJT-Homepage/","build_type":"legacy","source":{"branch":"master","path":"/"},"public":true,"protected_domain_state":null,"pending_domain_unverified_at":null,"https_enforced":true}BUILD
-{"url":"https://api.github.com/repos/spadardtubmanhc385-oss/LJT-Homepage/pages/builds/1304494733","status":"built","error":{"message":null},"pusher":{"login":"spadardtubmanhc385-oss","id":307926591,"node_id":"U_kgDOElqWPw","avatar_url":"https://avatars.githubusercontent.com/u/307926591?v=4","gravatar_id":"","url":"https://api.github.com/users/spadardtubmanhc385-oss","html_url":"https://github.com/spadardtubmanhc385-oss","followers_url":"https://api.github.com/users/spadardtubmanhc385-oss/followers","following_url":"https://api.github.com/users/spadardtubmanhc385-oss/following{/other_user}","gists_url":"https://api.github.com/users/spadardtubmanhc385-oss/gists{/gist_id}","starred_url":"https://api.github.com/users/spadardtubmanhc385-oss/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/spadardtubmanhc385-oss/subscriptions","organizations_url":"https://api.github.com/users/spadardtubmanhc385-oss/orgs","repos_url":"https://api.github.com/users/spadardtubmanhc385-oss/repos","events_url":"https://api.github.com/users/spadardtubmanhc385-oss/events{/privacy}","received_events_url":"https://api.github.com/users/spadardtubmanhc385-oss/received_events","type":"User","user_view_type":"public","site_admin":false},"commit":"a7d6a6a67e18c46c08336fb19cd6a52d4ef0ae89","duration":29318,"created_at":"2026-10-22T05:14:08Z","updated_at":"2026-10-22T05:14:37Z"}BUILD LOG
-{
-  "message": "Not Found",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "404"
-}gh: Not Found (HTTP 404)
-REQUEST
-{"status":"queued","url":"https://api.github.com/repositories/1429240410/pages/builds/latest"}CANONICAL
-<link rel="canonical" href="https://spadardtubmanhc385-oss.github.io/LJT-Homepage/">
-ASSETS
-href="https://spadardtubmanhc385-oss.github.io/LJT-Homepage/assets/css/main.css"
-AVATAR
-SECTIONS
-Publications
-About Me
-Academic Background
-Research Experience
-Skills
-Publications
+{"url":"https://api.github.com/repos/spadardtubmanhc385-oss/LJT-Homepage/pages","status":"errored","cname":null,"custom_404":false,"html_url":"https://spadardtubmanhc385-oss.github.io/LJT-Homepage/","build_type":"legacy","source":{"branch":"master","path":"/"},"public":true,"protected_domain_state":null,"pending_domain_unverified_at":null,"https_enforced":true}BUILD
+{"url":"https://api.github.com/repos/spadardtubmanhc385-oss/LJT-Homepage/pages/builds/1304500949","status":"building","error":{"message":null},"pusher":{"login":"spadardtubmanhc385-oss","id":307926591,"node_id":"U_kgDOElqWPw","avatar_url":"https://avatars.githubusercontent.com/u/307926591?v=4","gravatar_id":"","url":"https://api.github.com/users/spadardtubmanhc385-oss","html_url":"https://github.com/spadardtubmanhc385-oss","followers_url":"https://api.github.com/users/spadardtubmanhc385-oss/followers","following_url":"https://api.github.com/users/spadardtubmanhc385-oss/following{/other_user}","gists_url":"https://api.github.com/users/spadardtubmanhc385-oss/gists{/gist_id}","starred_url":"https://api.github.com/users/spadardtubmanhc385-oss/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/spadardtubmanhc385-oss/subscriptions","organizations_url":"https://api.github.com/users/spadardtubmanhc385-oss/orgs","repos_url":"https://api.github.com/users/spadardtubmanhc385-oss/repos","events_url":"https://api.github.com/users/spadardtubmanhc385-oss/events{/privacy}","received_events_url":"https://api.github.com/users/spadardtubmanhc385-oss/received_events","type":"User","user_view_type":"public","site_admin":false},"commit":"01507a18ad8714c665bdfa8d9593604d5dc9c568","duration":0,"created_at":"2026-10-22T05:17:25Z","updated_at":"2026-10-22T05:17:25Z"}REQUEST
+{"status":"queued","url":"https://api.github.com/repositories/1429240410/pages/builds/latest"}PATH /
+200
+PATH /publications/
+200
+PATH /about/
+404
+PATH /cv/
+404
+PATH /talks/
+404
+PATH /teaching/
+404
+PATH /portfolio/
+404
+PATH /markdown/
+404
+PATH /sitemap/
+404
+PATH /categories/
+404
+PATH /tags/
+404
+PATH /year-archive/
+404
+PATH /404.html
+200
+HOMEPAGE PUBLICATIONS
 SynLogic
-Contact
+On the Perception Bottleneck
+On the Universal Truthfulness
+In-Context Sharpness
+C-Eval
+Composing Parameter-Efficient
+PUBLICATIONS PAGE
+SynLogic
+On the Perception Bottleneck
+On the Universal Truthfulness
+In-Context Sharpness
+C-Eval
+Composing Parameter-Efficient
+SITEMAP
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://spadardtubmanhc385-oss.github.io/LJT-Homepage/</loc>
+</url>
+<url>
+<loc>https://spadardtubmanhc385-oss.github.io/LJT-Homepage/publications/</loc>
+</url>
+</urlset>
