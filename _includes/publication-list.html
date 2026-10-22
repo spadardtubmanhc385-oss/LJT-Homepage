@@ -1,0 +1,11 @@
+{% assign sorted_publications = site.publications | sort: "rank" %}
+<ul class="publications">
+  {% for publication in sorted_publications %}
+  <li>
+    <strong>{{ publication.title }}</strong><br />
+    {{ publication.authors | replace: "Junteng Liu", "<strong>Junteng Liu</strong>" }}<br />
+    <em>{{ publication.venue }}, {{ publication.year }}</em>
+    {% if publication.code %}<br />Code repository: {{ publication.code }}{% endif %}
+  </li>
+  {% endfor %}
+</ul>
