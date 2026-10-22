@@ -4,20 +4,33 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
 
 jobs:
   enable:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - name: Configure Pages site
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if gh api "repos/${GITHUB_REPOSITORY}/pages" > /tmp/pages.json 2>/dev/null; then
-            echo "Pages site already exists."
-          else
+          set +e
+          {
+            echo "GET"
+            gh api "repos/${GITHUB_REPOSITORY}/pages"
+            echo "PATCH"
+            gh api --method PATCH "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
+            echo "POST"
             gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
-          fi
-          gh api "repos/${GITHUB_REPOSITORY}/pages"
+            echo "GET after"
+            gh api "repos/${GITHUB_REPOSITORY}/pages"
+          } > pages-setup-status.txt 2>&1
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add pages-setup-status.txt
+          git commit -m "Record GitHub Pages setup status"
+          git push origin HEAD:master
