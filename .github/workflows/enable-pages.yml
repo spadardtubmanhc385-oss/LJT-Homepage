@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Check Pages build
+      - name: Check Pages URLs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -24,15 +24,19 @@ jobs:
             gh api "repos/${GITHUB_REPOSITORY}/pages"
             echo "BUILD"
             gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest"
-            echo "REQUEST"
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
-            echo "LIVE STATUS"
-            curl -Ls -o .github/homepage.html -w '%{http_code}\n' "https://spadardtubmanhc385-oss.github.io/LJT-Homepage/"
-            echo "SECTIONS"
-            grep -n -E 'About Me|Academic Background|Research Experience|Skills|Publications|SynLogic|Contact|jliugi' .github/homepage.html
+            echo "ROOT HEADERS"
+            curl -ILs "https://spadardtubmanhc385-oss.github.io/"
+            echo "PROJECT HEADERS"
+            curl -ILs "https://spadardtubmanhc385-oss.github.io/LJT-Homepage/"
+            echo "ROOT CANONICAL"
+            curl -Ls "https://spadardtubmanhc385-oss.github.io/" | grep -o '<link rel="canonical"[^>]*>'
+            echo "PROJECT CANONICAL"
+            curl -Ls "https://spadardtubmanhc385-oss.github.io/LJT-Homepage/" | grep -o '<link rel="canonical"[^>]*>'
           } > .github/pages-setup-status.txt 2>&1
+          curl -Ls "https://spadardtubmanhc385-oss.github.io/" -o .github/homepage-root.html
+          curl -Ls "https://spadardtubmanhc385-oss.github.io/LJT-Homepage/" -o .github/homepage-project.html
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add .github/pages-setup-status.txt .github/homepage.html
-          git commit -m "Record Pages build and homepage preview"
+          git add .github/pages-setup-status.txt .github/homepage-root.html .github/homepage-project.html
+          git commit -m "Record Pages URL checks"
           git push origin HEAD:master
